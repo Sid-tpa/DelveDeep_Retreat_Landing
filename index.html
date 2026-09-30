@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Stillwater — A Small Retreat by Delve Deep</title>
+<meta name="description" content="A polished retreat landing page concept with accommodation selection and booking flow.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#">DELVE <span>DEEP</span></a>
+  <nav><a href="#retreat">The retreat</a><a href="#rooms">Stay</a><a href="#experience">Experience</a><a href="#booking">Booking</a></nav>
+  <button class="nav-cta" onclick="openBooking()">Reserve a place</button>
+  <button class="menu" onclick="toggleMenu()">☰</button>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-image">
+    <div class="sun"></div><div class="hero-leaf leaf-a">✦</div><div class="hero-leaf leaf-b">⌁</div>
+    <div class="hero-caption"><span>01</span><span>THE HOUSE · COUNTRYSIDE</span></div>
+  </div>
+  <div class="hero-copy">
+    <div class="eyebrow">A SMALL RETREAT · 12–15 NOVEMBER 2026</div>
+    <h1>Come back<br><em>to yourself.</em></h1>
+    <p>Four slow days in a beautiful home, surrounded by nature, thoughtful food and space to breathe.</p>
+    <div class="hero-actions"><button class="dark-btn" onclick="scrollToRooms()">Choose your room <span>↓</span></button><a href="#retreat">Discover the retreat →</a></div>
+    <div class="availability"><span class="status-dot"></span><b>8 places</b> remaining · intentionally small
+    </div>
+  </div>
+</section>
+
+<section class="intro" id="retreat">
+  <div class="eyebrow">THE INVITATION</div>
+  <div><h2>A few days with<br><em>nowhere else to be.</em></h2><p>We created Stillwater for people who need a little distance from the noise. No packed itinerary. No pressure to perform. Just a warm house, good company and the permission to slow down.</p><p class="muted">Hosted by Delve Deep · a small-group retreat for 10–12 guests.</p></div>
+</section>
+
+<section class="included">
+  <div class="included-art"><span>slow</span><strong>is<br>productive.</strong></div>
+  <div class="included-list">
+    <div class="eyebrow">YOUR STAY INCLUDES</div>
+    <div class="item"><b>01</b><div><h3>Three nights in the house</h3><p>A private or shared room, fresh linens and all the little things that make a stay feel easy.</p></div></div>
+    <div class="item"><b>02</b><div><h3>Seasonal meals</h3><p>Breakfast, long lunches and dinners prepared with local, seasonal ingredients.</p></div></div>
+    <div class="item"><b>03</b><div><h3>Space to reset</h3><p>Guided reflection, gentle movement, walks, quiet mornings and plenty of unstructured time.</p></div></div>
+  </div>
+</section>
+
+<section class="rooms" id="rooms">
+  <div class="room-head"><div><div class="eyebrow">MAKE YOURSELF AT HOME</div><h2>Choose your<br><em>space.</em></h2></div><p>Two simple options. Both include the full retreat experience, meals and access to every shared space.</p></div>
+  <div class="room-grid">
+    <article class="room-card">
+      <div class="room-photo private"><span>PRIVATE ROOM</span></div>
+      <div class="room-body"><div class="room-title"><h3>The Quiet Room</h3><strong>£895</strong></div><p>Your own room for deep rest, reading and uninterrupted mornings.</p>
+      <ul><li>Single occupancy</li><li>Queen bed</li><li>Garden view</li></ul><div class="room-bottom"><span class="stock">● 3 available</span><button onclick="selectRoom('Private Room',895)">Select room →</button></div></div>
+    </article>
+    <article class="room-card">
+      <div class="room-photo shared"><span>SHARED ROOM</span></div>
+      <div class="room-body"><div class="room-title"><h3>The Meadow Room</h3><strong>£595</strong></div><p>A beautiful shared room for two, designed for connection and ease.</p>
+      <ul><li>Shared occupancy</li><li>Twin beds</li><li>Garden view</li></ul><div class="room-bottom"><span class="stock">● 5 available</span><button onclick="selectRoom('Shared Room',595)">Select room →</button></div></div>
+    </article>
+  </div>
+</section>
+
+<section class="quote"><div class="quote-mark">“</div><blockquote>There is something powerful about stepping away from the pace you think you need to keep.</blockquote><span>— THE DELVE DEEP PHILOSOPHY</span></section>
+
+<section class="experience" id="experience">
+  <div class="experience-copy"><div class="eyebrow">THE RHYTHM</div><h2>Nothing is<br><em>over-scheduled.</em></h2><p>Each day has a gentle rhythm rather than a strict timetable. Come to everything, or choose what your body needs that day.</p></div>
+  <div class="timeline">
+    <div><time>08:00</time><b>Slow morning</b><span>Tea, coffee & quiet</span></div>
+    <div><time>10:00</time><b>Morning practice</b><span>Movement & reflection</span></div>
+    <div><time>13:00</time><b>Long table lunch</b><span>Seasonal food together</span></div>
+    <div><time>15:30</time><b>Open afternoon</b><span>Walk, read, rest</span></div>
+    <div><time>19:00</time><b>Dinner & fireside</b><span>Good food, good conversation</span></div>
+  </div>
+</section>
+
+<section class="booking" id="booking">
+  <div class="booking-copy"><div class="eyebrow">YOUR PLACE IS WAITING</div><h2>Ready to<br><em>slow down?</em></h2><p>Select your accommodation, tell us a little about yourself, and continue to secure your place.</p><div class="booking-note">Secure checkout powered by Kajabi · confirmation sent by email</div></div>
+  <form id="bookingForm" class="booking-form" onsubmit="completeBooking(event)">
+    <div class="selected"><span>Selected accommodation</span><b id="selectedRoom">Choose a room above</b><strong id="selectedPrice">—</strong></div>
+    <label>Full name<input required placeholder="Your name"></label>
+    <label>Email address<input required type="email" placeholder="you@example.com"></label>
+    <label>Anything we should know?<textarea placeholder="Dietary needs, accessibility, questions..."></textarea></label>
+    <label class="check"><input required type="checkbox"> I agree to the retreat terms and booking policy.</label>
+    <button class="dark-btn full">Continue to secure payment <span>↗</span></button>
+    <small id="formMessage"></small>
+  </form>
+</section>
+</main>
+
+<footer><div class="brand">DELVE <span>DEEP</span></div><p>A retreat concept designed for slower days and deeper conversations.</p><span>© 2026 Delve Deep</span></footer>
+
+<div id="bookingModal" class="modal"><div class="modal-box">
+<button class="close" onclick="closeBooking()">×</button><div class="eyebrow">SECURE YOUR PLACE</div><h2>Choose your<br><em>accommodation.</em></h2>
+<div class="modal-option" onclick="selectRoom('Private Room',895)"><span><b>Private Room</b><small>Single occupancy · £895</small></span><i>→</i></div>
+<div class="modal-option" onclick="selectRoom('Shared Room',595)"><span><b>Shared Room</b><small>Twin sharing · £595</small></span><i>→</i></div>
+</div></div>
+<script src="script.js"></script>
+</body></html>
